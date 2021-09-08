@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router'
 import { Component } from 'react'
+//import { socket } from '../../../../socket'
+const socket = require('../../../../socket').socket
 const Post = () => {
     const router = useRouter()
     const channel_id = router.query.channel_id
@@ -30,6 +32,12 @@ class JsonExport extends Component {
         }
     };
     componentDidMount() {
+        socket.emit('export_json')
+        socket.on('change_json', (data) => {
+            this.setState({
+                message: data.message
+                })
+            })
         setTimeout(() => {
             this.setState(
                 {
