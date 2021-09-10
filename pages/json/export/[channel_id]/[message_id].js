@@ -17,11 +17,11 @@ const Post = (data) => {
         <div>
             <h1>Exported JSON</h1>
             <p>
-                This is the exported JSON for the message.
+                This is the exported JSON2 for the message.
             </p> 
             <pre>
                 <code>
-                    <JsonExport {...props}></JsonExport> 
+                    <JsonExport {...props}></JsonExport > 
                 </code>
             </pre>
         </div>
