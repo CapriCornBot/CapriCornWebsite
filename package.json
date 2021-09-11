@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "embed-visualizer": "^1.1.2",
     "next": "11.1.2",
     "next-themes": "^0.0.15",
     "react": "17.0.2",
