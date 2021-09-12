@@ -1,0 +1,28 @@
+.json_grid {
+    height: calc(100%);
+    max-height: calc(100%);
+    width: calc(100%);
+    display: grid; 
+    grid-template-columns: 0.5fr 0.5fr; 
+    grid-template-rows: 100px auto; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "headding headding"
+      "Json Embed"; 
+}
+.headding { grid-area: headding; }
+
+.Json { 
+  grid-area: Json;
+  height: calc(100vh - 200px);
+  max-height: calc(100vh - 200px);
+}
+
+.Json_container {
+  height: calc(100% - 10px) !important; 
+  max-height: calc(100% - 10px) !important;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.Embed { grid-area: Embed; }

@@ -4,7 +4,7 @@ import Image from "next/image";
 class Sidebar2 extends Component {
   render() {
     return (
-      <div className="bg-ddark sticky flex h-screen flex-col w-64 top-0">
+      <div className="bg-ddark sticky flex h-screen flex-col top-0">
         <div className="flex flex-col flex-1">
           <div className="border-4 rounded-b-md border-capri flex items-center justify-between px-4 py-3 bg-capri text-white">
             <div className="flex items-center">
@@ -41,6 +41,7 @@ export default Sidebar2;
 
 class MenuItem extends Component {
   render() {
+    console.log(this.props)
     if(this.props.only_dash && !this.props.active.startsWith("/dash")) {
       return <></>
     }

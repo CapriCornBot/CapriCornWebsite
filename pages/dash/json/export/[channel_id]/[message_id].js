@@ -1,14 +1,14 @@
 import { useRouter, withRouter } from 'next/router'
 import { Component } from 'react'
 import styles from '../../../../../styles/Home.module.css'
-import json_css from '../../../../../styles/json.export.module.css'
+import styles2 from '../../../../../styles/dash/json/export/[channel_id]/Json_Export.module.css'
 import Sidebar2 from '../../../../../components/sidebar'
 import EmbedVisualizer, {parseContent, parseTitle} from 'embed-visualizer'
 import 'embed-visualizer/dist/index.css'
 
 //import { socket } from '../../../../socket'
 const socket = require('../../../../../socket').socket
-const Post = (data) => {
+function Json_Export(data) {
     const router = useRouter()
     const channel_id = data.channel_id
     const message_id = data.message_id
@@ -18,18 +18,17 @@ const Post = (data) => {
         message_id: message_id
     }
     //return <></>
-    return (
-        <div className="flex">
-            <Sidebar2 page={"/dash/json/export/[channel_id]/[message_id]"}></Sidebar2>
-            <div className="flex-grow flex-col bg-ldark">
-                <div className="" id="Ueberschrift">
-                    <h1 className={styles.title}>Exported JSON</h1>
-                    <br/>
-                    <p>
-                        This is the exported JSON2 for the message.
-                    </p> 
-                </div>
-                <div className="w-full overflow-y-scroll h-30 pb-10 bg-verydark border-4 rounded-lg border-ddark" id="Codewidget">
+    return (<>
+        <div className={styles2.json_grid}>
+            <div className={`text-white ${styles2.headding}`} id="Ueberschrift">
+                <h1 className={styles.title}>Exported JSON</h1>
+                <br/>
+                <p>
+                    This is the exported JSON2 for the message.
+                </p> 
+            </div>
+            <div className={`text-white ${styles2.Json}`} id="Codewidget">
+                <div className={`${styles2.Json_container} mx-5 mt-5 bg-verydark border-4 rounded-lg border-ddark`}>
                     <pre>
                         <code>
                             <JsonExport {...props}></JsonExport> 
@@ -37,9 +36,8 @@ const Post = (data) => {
                     </pre>
                 </div>
             </div>
-        
         </div>
-
+        </>
         // <div className="ml-10 mr-10 h-screen">
         //     <div className="table-row-group block w-full table">
         //         <div className="table-row">
@@ -122,15 +120,14 @@ class EmbedVisualizer2 extends Component {
 
 
 export async function getServerSideProps(context) {
-    console.log("Context", context)
     const channel_id = context.query.channel_id
     const message_id = context.query.message_id
     const props = {
         channel_id: channel_id, 
-        message_id: message_id
+        message_id: message_id 
     }
     return {
         props: props
     }
 }
-export default withRouter(Post)
+export default withRouter(Json_Export)
