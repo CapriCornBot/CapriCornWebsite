@@ -14,3 +14,36 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.website-grid {
+  width: 100vw;
+  height: 100vh;
+  display: grid; 
+  grid-template-columns: 250px auto; 
+  grid-template-rows: 50px auto 25px; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Sidebar Navbar"
+    "Sidebar Content"
+    "Sidebar Footer"; 
+}
+
+.Sidebar-container {
+  grid-area: Sidebar;
+}
+
+.Navbar-container {
+  grid-area: Navbar;
+  background-color: black;
+}
+
+.Content-container {
+  grid-area: Content;
+  overflow-y: auto;
+  background-color: #2C2F33
+}
+
+.Footer-container {
+  grid-area: Footer;
+  background-color: black;
+}
