@@ -22,36 +22,20 @@ const Post = (data) => {
         <div className="flex">
             <Sidebar2 page={"/dash/json/export/[channel_id]/[message_id]"}></Sidebar2>
             <div className="flex-grow flex-col bg-ldark">
-                <table className="overflow-x:autos" id="">
-                    <tbody>
-                        <td>
-                            <tr>
-                                <div className="" id="Ueberschrift">
-                                    <h1 className={styles.title}>Exported JSON</h1>
-                                    <br/>
-                                    <p>
-                                        This is the exported JSON2 for the message.
-                                    </p> 
-                                </div>
-                            </tr>
-                            <tr>
-                                <div className="w-full overflow-y-scroll h-30 pb-10 bg-verydark border-4 rounded-lg border-ddark" id="Codewidget">
-                                    <pre>
-                                        <code>
-                                            <JsonExport {...props}></JsonExport> 
-                                        </code>
-                                    </pre>
-                                </div>
-                            </tr>
-                        </td>
-                        <td>
-                            <tr>
-                                {/* <EmbedVisualizer2 /> */}
-                            </tr>
-                        </td>
-                    </tbody>
-                
-                </table>
+                <div className="" id="Ueberschrift">
+                    <h1 className={styles.title}>Exported JSON</h1>
+                    <br/>
+                    <p>
+                        This is the exported JSON2 for the message.
+                    </p> 
+                </div>
+                <div className="w-full overflow-y-scroll h-30 pb-10 bg-verydark border-4 rounded-lg border-ddark" id="Codewidget">
+                    <pre>
+                        <code>
+                            <JsonExport {...props}></JsonExport> 
+                        </code>
+                    </pre>
+                </div>
             </div>
         
         </div>

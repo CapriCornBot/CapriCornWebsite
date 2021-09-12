@@ -3,7 +3,6 @@ import Image from "next/image";
 
 class Sidebar2 extends Component {
   render() {
-    console.log("Props", this.props);
     return (
       <div className="bg-ddark sticky flex h-screen flex-col w-64 top-0">
         <div className="flex flex-col flex-1">
